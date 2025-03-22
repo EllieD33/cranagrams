@@ -60,7 +60,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultProps = { };
+const defaultProps: ${componentName}Props = { };
 
 export const Default: Story = {
     args: {
