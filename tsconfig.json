@@ -8,7 +8,8 @@
     "strict": true, 
     "skipLibCheck": true, 
     "forceConsistentCasingInFileNames": true, 
-    "lib": ["dom", "esnext"] 
+    "lib": ["dom", "esnext"],
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": [
     "src/**/*.ts",
