@@ -1,0 +1,25 @@
+.button {
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg,
+            #3571eb 10%,
+            #a536dd 30%,
+            #ee3491 60%,
+            #ff7f50 90%);
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
