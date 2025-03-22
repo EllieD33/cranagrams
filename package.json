@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "create-component": "node scripts/create-component.cjs"
   },
   "dependencies": {
     "react": "^19.0.0",

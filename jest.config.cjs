@@ -17,6 +17,7 @@ module.exports = {
         "!src/**/*.css",
         "!src/constants/**/*",
         "!src/**/testData/**",
+        "!src/main.tsx"
     ],
     coverageDirectory: "coverage",
     coverageReporters: ["text", "lcov", "html"],
