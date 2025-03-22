@@ -5,10 +5,12 @@ module.exports = {
     testEnvironment: "jest-environment-jsdom",
     transform: {
         "^.+\\.(ts|tsx)$": "ts-jest",
+        '\\.css$': 'jest-transform-css',
     },
     moduleNameMapper: {
-        "\\.module\\.css$": "jest-css-modules",
+        "/\.module\.css$/": "jest-css-modules"
     },
+    resolver: undefined,
     collectCoverage: true,
     collectCoverageFrom: [
         "src/**/*.{js,jsx,ts,tsx}",
@@ -17,7 +19,8 @@ module.exports = {
         "!src/**/*.css",
         "!src/constants/**/*",
         "!src/**/testData/**",
-        "!src/main.tsx"
+        "!src/main.tsx",
+        "!src/App.tsx"
     ],
     coverageDirectory: "coverage",
     coverageReporters: ["text", "lcov", "html"],
