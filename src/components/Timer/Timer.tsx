@@ -1,24 +1,31 @@
 import { ReactElement } from "react";
+import { useTimer } from "../../hooks/useTimer";
 import styles from "./Timer.module.css";
-import IconButton from "../IconButton/IconButton";
 import clsx from "clsx";
+import IconButton from "../IconButton/IconButton";
 
 // export interface TimerProps {};
 
 const Timer = (): ReactElement => {
   const containerStyles = clsx(styles.flexCentred, styles.stopwatchContainer);
   const stopwatchStyles = clsx(styles.flexCentred, styles.stopwatch);
+
+  const { formattedTime, start, stop, reset, isRunning } = useTimer();
+
   return (
     <div className={containerStyles}>
       <div className={stopwatchStyles} data-testid={"stopwatch"}>
         <h2 className={styles.digits} data-testid={"digits"}>
-          00:00:00
+          {formattedTime}
         </h2>
       </div>
       <div className={styles.timerControls}>
-        <IconButton icon="start" ariaLabel="Start timer" onClick={() => {}} />
-        <IconButton icon="stop" ariaLabel="Stop timer" onClick={() => {}} />
-        <IconButton icon="reset" ariaLabel="Reset timer" onClick={() => {}} />
+        {isRunning ? (
+          <IconButton icon="stop" ariaLabel="Stop timer" onClick={stop} />
+        ) : (
+          <IconButton icon="start" ariaLabel="Start timer" onClick={start} />
+        )}
+        <IconButton icon="reset" ariaLabel="Reset timer" onClick={reset} />
       </div>
     </div>
   );

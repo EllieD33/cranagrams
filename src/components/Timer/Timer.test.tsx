@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Timer from "./Timer";
 
 describe("Timer", () => {
@@ -11,35 +11,31 @@ describe("Timer", () => {
     expect(digits).toHaveTextContent("00:00:00");
   });
 
-  it("should render timer control buttons", () => {
+  it("should render start and reset control buttons when timer is not running", () => {
     render(<Timer />);
 
     const startButton = screen.getByLabelText("Start timer");
-    const stopButton = screen.getByLabelText("Stop timer");
+    const stopButton = screen.queryByLabelText("Stop timer");
     const resetButton = screen.getByLabelText("Reset timer");
 
     expect(startButton).toBeInTheDocument();
-    expect(stopButton).toBeInTheDocument();
+    expect(stopButton).not.toBeInTheDocument();
     expect(resetButton).toBeInTheDocument();
   });
 
-  it("should call onClick functions when buttons are clicked", () => {
+  it("should render stop and reset control buttons when timer is running", async () => {
     render(<Timer />);
 
     const startButton = screen.getByLabelText("Start timer");
-    const stopButton = screen.getByLabelText("Stop timer");
     const resetButton = screen.getByLabelText("Reset timer");
 
-    const mockOnClick = jest.fn();
-
-    startButton.onclick = mockOnClick;
-    stopButton.onclick = mockOnClick;
-    resetButton.onclick = mockOnClick;
-
     fireEvent.click(startButton);
-    fireEvent.click(stopButton);
-    fireEvent.click(resetButton);
 
-    expect(mockOnClick).toHaveBeenCalledTimes(3);
+    await waitFor(() => {
+      const stopButton = screen.getByLabelText("Stop timer");
+      expect(screen.queryByLabelText("Start timer")).toBeNull();
+      expect(stopButton).toBeInTheDocument();
+      expect(resetButton).toBeInTheDocument();
+    });
   });
 });
