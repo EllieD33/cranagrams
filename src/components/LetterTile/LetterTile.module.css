@@ -1,0 +1,32 @@
+.tile {
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-items: center;
+}
+
+.yellow {
+    background: linear-gradient(145deg, #f9d976, #f39c12);
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.ivory {
+    background: linear-gradient(145deg, #efe8d8, #d4c4a5);
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.white {
+    background: linear-gradient(145deg, #ffffff, #f3f1f7);
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.letter {
+    font-family: Arial, sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    margin: 0;
+    color: #363636;
+}
