@@ -1,0 +1,26 @@
+.flexCentred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stopwatchContainer {
+    flex-direction: column;
+}
+
+.stopwatch {
+    border: 1px solid #363636;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+.digits {
+    font-family: 'Rubik', sans-serif;
+}
+
+.timerControls {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}

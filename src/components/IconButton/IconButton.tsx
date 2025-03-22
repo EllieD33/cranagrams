@@ -16,7 +16,7 @@ const IconButton = ({
   onClick,
   disabled = false
 }: IconButtonProps): ReactElement => {
-  const iconProps = { size: 24, color: "#fff" };
+  const iconProps = { size: 18, color: "#fff" };
   const iconLookup = {
     start: <FaPlay {...iconProps} style={{ marginLeft: "3px" }} />,
     stop: <FaStop {...iconProps} />,
