@@ -5,12 +5,10 @@ module.exports = {
     testEnvironment: "jest-environment-jsdom",
     transform: {
         "^.+\\.(ts|tsx)$": "ts-jest",
-        '\\.css$': 'jest-transform-css',
     },
     moduleNameMapper: {
-        "/\.module\.css$/": "jest-css-modules"
+        "\\.module\\.css$": "jest-css-modules"
     },
-    resolver: undefined,
     collectCoverage: true,
     collectCoverageFrom: [
         "src/**/*.{js,jsx,ts,tsx}",
