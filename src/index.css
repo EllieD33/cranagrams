@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
 
@@ -27,8 +27,13 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Winky Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Winky Sans", sans-serif;
 }
 
 @media (prefers-color-scheme: light) {

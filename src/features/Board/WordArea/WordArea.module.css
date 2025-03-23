@@ -1,5 +1,5 @@
 .wordGridContainer {
-    display: flex;
-    min-width: 320px;
-    background-color: bisque;
+  display: flex;
+  min-width: 320px;
+  background-color: bisque;
 }

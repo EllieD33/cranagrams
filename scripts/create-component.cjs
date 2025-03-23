@@ -5,18 +5,18 @@ const componentName = process.argv[2];
 const location = process.argv[3] || "src/components";
 
 if (!componentName) {
-    console.error(
-        "❌ Error: Please provide a component name (in PascalCase) as an argument."
-    );
-    console.log("  Example: node create-component.js Button");
-    process.exit(1);
+  console.error(
+    "❌ Error: Please provide a component name (in PascalCase) as an argument."
+  );
+  console.log("  Example: node create-component.js Button");
+  process.exit(1);
 }
 
 if (!/^[A-Z][a-zA-Z]*$/.test(componentName)) {
-    console.error(
-        '❌ Error: The component name must be in PascalCase (e.g., "Button", "MyComponent").'
-    );
-    process.exit(1);
+  console.error(
+    '❌ Error: The component name must be in PascalCase (e.g., "Button", "MyComponent").'
+  );
+  process.exit(1);
 }
 
 const componentDir = path.join(location, componentName);
@@ -26,7 +26,7 @@ const locationParts = location.split("/");
 const folderName = locationParts[locationParts.length - 1];
 
 const componentFile = path.join(componentDir, `${componentName}.tsx`);
-const componentContent = `import React, { ReactElement } from "react";
+const componentContent = `import { ReactElement } from "react";
 import styles from "./${componentName}.module.css";
 
 export interface ${componentName}Props {};
@@ -72,8 +72,7 @@ export const Default: Story = {
 fs.writeFileSync(storiesFile, storiesContent);
 
 const testFile = path.join(componentDir, `${componentName}.test.tsx`);
-const testContent = `import React from "react";
-import { render, screen } from "@testing-library/react";
+const testContent = `import { render, screen } from "@testing-library/react";
 import ${componentName}, { ${componentName}Props } from "./${componentName}";
 
 const defaultProps: ${componentName}Props = {};
