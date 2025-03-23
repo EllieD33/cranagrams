@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import LetterTile, { LetterTileProps } from "./LetterTile";
 
@@ -13,5 +12,10 @@ describe("LetterTile", () => {
     expect(
       screen.getByText(defaultProps.letter.toUpperCase())
     ).toBeInTheDocument();
+  });
+
+  it("should hide the letter when flipped is true", () => {
+    render(<LetterTile {...defaultProps} flipped={true} />);
+    expect(screen.getByTestId(/letter/)).toHaveClass(/flipped/);
   });
 });
