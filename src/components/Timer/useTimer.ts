@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { formatTime } from "../utils/timeUtils";
+import { formatTime } from "../../utils/timeUtils";
 
 export const useTimer = () => {
   const [seconds, setSeconds] = useState<number>(0);

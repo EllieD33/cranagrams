@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { useTimer } from "../../hooks/useTimer";
+import { useTimer } from "./useTimer";
 import styles from "./Timer.module.css";
 import clsx from "clsx";
 import IconButton from "../IconButton/IconButton";
