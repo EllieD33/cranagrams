@@ -14,7 +14,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultProps: LetterTileProps = { letter: "a" };
+const defaultProps: LetterTileProps = { letter: "A" };
 
 export const Default: Story = {
   args: {

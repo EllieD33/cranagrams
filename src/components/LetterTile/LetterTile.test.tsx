@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import LetterTile, { LetterTileProps } from "./LetterTile";
 
 const defaultProps: LetterTileProps = {
-  letter: "a"
+  letter: "A"
 };
 
 describe("LetterTile", () => {

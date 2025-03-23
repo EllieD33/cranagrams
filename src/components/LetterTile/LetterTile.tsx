@@ -20,7 +20,7 @@ const LetterTile = ({
       data-testid={`tile-${letter}`}
     >
       <p className={letterStyles} data-testid="letter">
-        {letter.toUpperCase()}
+        {letter}
       </p>
     </div>
   );
