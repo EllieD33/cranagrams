@@ -3,11 +3,12 @@ import styles from "./Board.module.css";
 import { tileDeck } from "../../constants/tiles";
 import TilePile from "./TilePile/TilePile";
 import WordArea from "./WordArea/WordArea";
+import { shuffle } from "../../utils/shuffle";
 
 export interface BoardProps { };
 
 const Board = ({ }: BoardProps): ReactElement => {
-    const [remainingTiles, setRemainingTiles] = useState([...tileDeck]);
+    const [remainingTiles, setRemainingTiles] = useState<string[]>(() => shuffle([...tileDeck]));
     const [playerTiles, setPlayerTiles] = useState<string[]>(["A", "C", "F"]);
 
     return (
