@@ -1,20 +1,29 @@
 import { ReactElement } from "react";
 import styles from "./TilePile.module.css";
 import LetterTile from "../../../components/LetterTile/LetterTile";
+import { TileType } from "../../../types/gameTypes";
 
 export interface TilePileProps {
-    tiles: string[]
-};
+  tiles: TileType[];
+  onTileClick: (tile: TileType) => void;
+  testId?: string;
+}
 
-const TilePile = ({ tiles }: TilePileProps): ReactElement => {
-    return (
-        <div>
-            <div className={styles.pile} data-testid="pile">
-                {tiles.map((tile, index) => <LetterTile letter={tile} key={`${tile}${index}`} />)}
-            </div>
-            <div></div>
-        </div>
-    );
+const TilePile = ({
+  tiles,
+  onTileClick,
+  testId
+}: TilePileProps): ReactElement => {
+  return (
+    <div data-testid={testId}>
+      <div className={styles.pile} data-testid="pile">
+        {tiles.map(tile => (
+          <LetterTile tileData={tile} key={tile.id} onClick={onTileClick} />
+        ))}
+      </div>
+      <div></div>
+    </div>
+  );
 };
 
 export default TilePile;
