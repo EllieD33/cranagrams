@@ -14,7 +14,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultProps: LetterTileProps = { letter: "A" };
+const defaultProps: LetterTileProps = {
+  tileData: { id: "A1", letter: "A" },
+  tileLocation: "PlayerTray"
+};
 
 export const Default: Story = {
   args: {

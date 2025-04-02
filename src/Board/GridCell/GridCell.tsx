@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 import styles from "./GridCell.module.css";
-import LetterTile from "../../../components/LetterTile/LetterTile";
-import { useTileState } from "../../../context/TileStateContext";
-import { handleDragOver, handleDrop } from "../../../utils/dragAndDrop";
-import { moveTile } from "../../../utils/moveTile";
+import LetterTile from "../LetterTile/LetterTile";
+import { useTileState } from "../../context/TileStateContext";
+import { handleDragOver, handleDrop } from "../../utils/dragAndDrop";
+import { moveTile } from "../../utils/moveTile";
 
 export interface GridCellProps {
   rowIndex: number;

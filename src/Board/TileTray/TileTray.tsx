@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import styles from "./TileTray.module.css";
-import LetterTile from "../../../components/LetterTile/LetterTile";
+import LetterTile from "../LetterTile/LetterTile";
 import clsx from "clsx";
-import { useTileState } from "../../../context/TileStateContext";
-import { handleDragOver, handleDrop } from "../../../utils/dragAndDrop";
-import { moveTile } from "../../../utils/moveTile";
+import { useTileState } from "../../context/TileStateContext";
+import { handleDragOver, handleDrop } from "../../utils/dragAndDrop";
+import { moveTile } from "../../utils/moveTile";
 
 export interface TilePileProps {
   variant: "PlayerTray" | "TilePile";

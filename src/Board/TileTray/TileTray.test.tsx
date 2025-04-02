@@ -1,10 +1,10 @@
 import { render, fireEvent, screen } from "@testing-library/react";
-import { useTileState } from "../../../context/TileStateContext";
-import * as dragAndDrop from "../../../utils/dragAndDrop";
-import * as moveTileUtils from "../../../utils/moveTile";
+import { useTileState } from "../../context/TileStateContext";
+import * as dragAndDrop from "../../utils/dragAndDrop";
+import * as moveTileUtils from "../../utils/moveTile";
 import TileTray from "./TileTray";
 
-jest.mock("../../../context/TileStateContext", () => ({
+jest.mock("../../context/TileStateContext", () => ({
   useTileState: jest.fn()
 }));
 

@@ -20,7 +20,6 @@ export const moveTile = (
     setWordGrid(prev => [...prev, { ...tile, row, col }]);
     setPlayerTiles(prev => prev.filter(t => t.id !== tile.id));
   } else if (origin === "WordGrid" && target === "WordGrid" && row && col) {
-    /*istanbul ignore next */
     setWordGrid(prev =>
       prev.map(t => (t.id === tile.id ? { ...t, row, col } : t))
     );

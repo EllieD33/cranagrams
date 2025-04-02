@@ -2,9 +2,7 @@ import { ReactElement } from "react";
 import { useTimer } from "./useTimer";
 import styles from "./Timer.module.css";
 import clsx from "clsx";
-import IconButton from "../IconButton/IconButton";
-
-// export interface TimerProps {};
+import IconButton from "../../components/IconButton/IconButton";
 
 const Timer = (): ReactElement => {
   const containerStyles = clsx(styles.flexCentred, styles.stopwatchContainer);

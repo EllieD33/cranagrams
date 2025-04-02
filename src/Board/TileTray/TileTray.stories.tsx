@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import TileTray, { TilePileProps } from "./TileTray";
-import { tileDeck } from "../../../constants/tiles";
 
 const meta = {
   title: "Library/Board/TilePile/TilePile",

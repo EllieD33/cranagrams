@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import WordArea, { WordAreaProps } from "./WordArea";
-import { TileStateProvider } from "../../../context/TileStateContext";
+import { TileStateProvider } from "../../context/TileStateContext";
 
 const defaultProps: WordAreaProps = {};
 

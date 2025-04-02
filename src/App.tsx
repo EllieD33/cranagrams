@@ -1,6 +1,6 @@
 import "./App.css";
 import { TileStateProvider } from "./context/TileStateContext";
-import Board from "./features/Board/Board";
+import Board from "./Board/Board";
 
 function App() {
   return (

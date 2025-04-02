@@ -1,10 +1,10 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 import GridCell, { GridCellProps } from "./GridCell";
-import { useTileState } from "../../../context/TileStateContext";
-import * as dragAndDrop from "../../../utils/dragAndDrop";
-import * as moveTileUtils from "../../../utils/moveTile";
+import { useTileState } from "../../context/TileStateContext";
+import * as dragAndDrop from "../../utils/dragAndDrop";
+import * as moveTileUtils from "../../utils/moveTile";
 
-jest.mock("../../../context/TileStateContext", () => ({
+jest.mock("../../context/TileStateContext", () => ({
   useTileState: jest.fn()
 }));
 
