@@ -1,4 +1,4 @@
-import { TileType } from "../types/gameTypes";
+import { Tile } from "../types/gameTypes";
 
 const letters = [
   ...Array(13).fill("A"),
@@ -34,5 +34,5 @@ export const tileDeck = letters.map(
     ({
       id: `${letter}${index + 1}`,
       letter
-    }) satisfies TileType
+    }) satisfies Tile
 );

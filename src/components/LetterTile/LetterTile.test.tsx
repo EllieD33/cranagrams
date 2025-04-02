@@ -1,9 +1,10 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import LetterTile, { LetterTileProps } from "./LetterTile";
+import * as dragAndDrop from "../../utils/dragAndDrop";
 
 const defaultProps: LetterTileProps = {
   tileData: { id: "A1", letter: "A" },
-  onClick: jest.fn()
+  tileLocation: "TilePile"
 };
 
 describe("LetterTile", () => {
@@ -18,10 +19,21 @@ describe("LetterTile", () => {
     expect(screen.getByTestId(/letter/)).toHaveClass(/flipped/);
   });
 
-  it("should call the onClick when tile is clicked", () => {
+  it("should call handleDragStart on drag start", () => {
+    const mockHandleDragStart = jest
+      .spyOn(dragAndDrop, "handleDragStart")
+      .mockImplementation(jest.fn());
+
     render(<LetterTile {...defaultProps} />);
-    const tile = screen.getByTestId(/tile/);
-    fireEvent.click(tile);
-    expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
+
+    const tileElement = screen.getByTestId(`tile-${defaultProps.tileData.id}`);
+    fireEvent.dragStart(tileElement);
+
+    expect(mockHandleDragStart).toHaveBeenCalledTimes(1);
+    expect(mockHandleDragStart).toHaveBeenCalledWith(
+      expect.any(Object),
+      { ...defaultProps.tileData },
+      defaultProps.tileLocation
+    );
   });
 });

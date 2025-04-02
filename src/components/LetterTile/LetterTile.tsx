@@ -1,18 +1,19 @@
 import { ReactElement } from "react";
 import styles from "./LetterTile.module.css";
 import clsx from "clsx";
-import { TileType } from "../../types/gameTypes";
+import { BoardArea, Tile } from "../../types/gameTypes";
+import { handleDragStart } from "../../utils/dragAndDrop";
 
 export interface LetterTileProps {
-  tileData: TileType;
-  onClick: (tile: TileType) => void;
+  tileData: Tile;
+  tileLocation: BoardArea;
   flipped?: boolean;
   colour?: "white" | "ivory" | "yellow";
 }
 
 const LetterTile = ({
   tileData,
-  onClick,
+  tileLocation,
   flipped = false,
   colour = "yellow"
 }: LetterTileProps): ReactElement => {
@@ -21,10 +22,11 @@ const LetterTile = ({
 
   return (
     <div
-      id={id}
-      onClick={() => onClick(tileData)}
+      draggable
+      id={tileData.id}
       className={clsx(styles.tile, styles[colour])}
       data-testid={`tile-${id}`}
+      onDragStart={e => handleDragStart(e, tileData, tileLocation)}
     >
       <p className={letterStyles} data-testid="letter">
         {letter}

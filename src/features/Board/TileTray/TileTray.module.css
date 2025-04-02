@@ -1,0 +1,17 @@
+.pile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.tilePile {
+  border: 2px solid purple;
+}
+
+.playerTray {
+  border: 2px solid green;
+  min-height: 200px;
+}
