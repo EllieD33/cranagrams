@@ -23,11 +23,19 @@ const GridCell = ({ rowIndex, colIndex }: GridCellProps): ReactElement => {
       rowIndex,
       colIndex
     );
-    moveTile(origin, target, tile, row, col, {
-      setPlayerTiles,
-      setTilePile,
-      setWordGrid
-    });
+    moveTile(
+      origin,
+      target,
+      tile,
+      row,
+      col,
+      {
+        setPlayerTiles,
+        setTilePile,
+        setWordGrid
+      },
+      wordGrid
+    );
   };
 
   return (

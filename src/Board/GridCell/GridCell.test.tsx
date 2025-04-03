@@ -99,7 +99,8 @@ describe("GridCell Component", () => {
         setPlayerTiles: mockSetPlayerTiles,
         setTilePile: mockSetTilePile,
         setWordGrid: mockSetWordGrid
-      }
+      },
+      [{ col: 0, id: "1", letter: "A", row: 0 }]
     );
   });
 });
