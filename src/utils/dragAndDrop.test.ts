@@ -34,16 +34,12 @@ describe("Drag and Drop Functions", () => {
   });
 
   it("should correctly handle the drag start event", () => {
-    console.log = jest.fn();
-
     handleDragStart(mockEvent, mockTile, mockOrigin);
 
     expect(mockDataTransfer.setData).toHaveBeenCalledWith(
       "application/json",
       JSON.stringify({ tile: mockTile, origin: mockOrigin })
     );
-
-    expect(console.log).toHaveBeenCalledWith("Start dragging tile ", mockTile);
   });
 
   it("should correctly handle the drop event", () => {

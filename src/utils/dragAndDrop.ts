@@ -7,7 +7,6 @@ export const handleDragStart = (
 ) => {
   const data = JSON.stringify({ tile, origin });
   e.dataTransfer.setData("application/json", data);
-  console.log("Start dragging tile ", tile);
 };
 
 export const handleDrop = (
@@ -20,7 +19,6 @@ export const handleDrop = (
   const { origin, tile } = JSON.parse(
     e.dataTransfer.getData("application/json")
   );
-  console.log("Dropping tile ", tile);
   return { origin, target, tile, row, col };
 };
 
